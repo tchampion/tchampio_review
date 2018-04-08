@@ -93,6 +93,15 @@ public class SortDemo extends Applet {
                 output.setText(helpStr); 
         }
         
+        /**
+        Method: runDemo
+        Inputs: void
+        Returns: void
+
+        Description: Method that runs when the start butten is pressed.  Reads in the array of numbers,
+        times the read, finds the selected algorithm, runs selected algorithm, times the algorithm and 
+        prints the output to the output TextArea. 
+      */
         public void runDemo() {  
                 try {
                         output.setText("");
