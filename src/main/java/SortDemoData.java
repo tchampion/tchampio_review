@@ -1,12 +1,15 @@
 package main.java;
 
 // SortDemo.java     
+
 import java.util.*;   // for class StringTokenizer
 
 
+
 public class SortDemoData  {
-               
+
         public Item[] myArray; 
+
         public String algo;
 
         public SortDemoData(){

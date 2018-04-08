@@ -3,7 +3,6 @@ package main.java;
 /** 
  * A collection of various sorting algorithms for sorting an array
  * of items with int key
- */ 
 
 public final class SortAlgos {
 
@@ -89,10 +88,8 @@ public final class SortAlgos {
                         insertAtPosition(vec, insPos, currentPos);
                 }   
         }
-        
 
 
-    
     
         /**
          * Sorts with mergesort algorithm
@@ -147,7 +144,7 @@ public final class SortAlgos {
                         heapify(vec, 0, last-1);
                 }//endfor
         }
-        
+
         /**
          * Finds insertion position with binary search
          * @param vec the array to be sorted
@@ -191,6 +188,7 @@ public final class SortAlgos {
                 for (int i = fromPos; i > insPos; i--) vec[i] = vec[i-1];
                 vec[insPos] = temp;
         }
+
         
         /**
          * merges two sorted adjacent ranges of an array
@@ -247,6 +245,7 @@ public final class SortAlgos {
                 mergeSort(vec, middle+1, last);  // sort the second part
                 merge(vec, first, middle, last); // merge the 2 sorted parts
         }
+
         
         /**
          * sorts array by quicksort in a certain range
@@ -352,4 +351,5 @@ public final class SortAlgos {
                         heapify(vec, i, vec.length - 1);
                 }
         }
+
 }
