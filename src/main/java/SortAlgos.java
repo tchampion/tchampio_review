@@ -3,8 +3,7 @@ package main.java;
 /** 
  * A collection of various sorting algorithms for sorting an array
  * of items with int key
- */
- 
+
 public final class SortAlgos {
 
         /**
@@ -89,7 +88,63 @@ public final class SortAlgos {
                         insertAtPosition(vec, insPos, currentPos);
                 }   
         }
+
+
+    
+        /**
+         * Sorts with mergesort algorithm
+         * @param vec the array to be sorted
+         * @exception NullPointerException if <code>vec</code> 
+         * is not initialized
+         */
+        public static void mergeSort(Item vec[]) 
+                                throws NullPointerException {
+                if (vec == null) throw new NullPointerException();
+                mergeSort(vec, 0, vec.length - 1);
+        }
         
+        
+
+    
+    
+        /**
+         * Sorts with quicksort algorithm
+         * @param vec the array to be sorted
+         * @exception NullPointerException if <code>vec</code> 
+         * is not initialized
+         */
+        public static void quickSort(Item[] vec) 
+                                throws NullPointerException {
+                if (vec == null) throw new NullPointerException();
+                quickSort(vec, 0, vec.length - 1);
+        }
+        
+
+    
+        /**
+         * sorts array by heapsort in a certain range
+         * @param vec the array in which this happens
+         */
+        public static void heapSort(Item[] vec) 
+                                throws NullPointerException {
+                if (vec == null) throw new NullPointerException();
+    
+                Item temp;
+                int last;
+                int n = vec.length;
+            
+                createHeap(vec);
+                for (last = n-1; last > 0; last--) {
+                        // exchange top component with 
+                        // current last component of vec
+                        temp = vec[0]; 
+                        vec[0] = vec[last]; 
+                        vec[last] = temp;
+                        // call Heapify to to reestablish heap property
+                        heapify(vec, 0, last-1);
+                }//endfor
+        }
+
         /**
          * Finds insertion position with binary search
          * @param vec the array to be sorted
@@ -116,6 +171,7 @@ public final class SortAlgos {
                 }
                 return index;
         }
+
         
         /**
          * Inserts array component into a sorted range below the component
@@ -132,20 +188,7 @@ public final class SortAlgos {
                 for (int i = fromPos; i > insPos; i--) vec[i] = vec[i-1];
                 vec[insPos] = temp;
         }
-    
-    
-        /**
-         * Sorts with mergesort algorithm
-         * @param vec the array to be sorted
-         * @exception NullPointerException if <code>vec</code> 
-         * is not initialized
-         */
-        public static void mergeSort(Item vec[]) 
-                                throws NullPointerException {
-                if (vec == null) throw new NullPointerException();
-                mergeSort(vec, 0, vec.length - 1);
-        }
-        
+
         
         /**
          * merges two sorted adjacent ranges of an array
@@ -202,19 +245,7 @@ public final class SortAlgos {
                 mergeSort(vec, middle+1, last);  // sort the second part
                 merge(vec, first, middle, last); // merge the 2 sorted parts
         }
-    
-    
-        /**
-         * Sorts with quicksort algorithm
-         * @param vec the array to be sorted
-         * @exception NullPointerException if <code>vec</code> 
-         * is not initialized
-         */
-        public static void quickSort(Item[] vec) 
-                                throws NullPointerException {
-                if (vec == null) throw new NullPointerException();
-                quickSort(vec, 0, vec.length - 1);
-        }
+
         
         /**
          * sorts array by quicksort in a certain range
@@ -320,30 +351,5 @@ public final class SortAlgos {
                         heapify(vec, i, vec.length - 1);
                 }
         }
-    
-        /**
-         * sorts array by heapsort in a certain range
-         * @param vec the array in which this happens
-         */
-        public static void heapSort(Item[] vec) 
-                                throws NullPointerException {
-                if (vec == null) throw new NullPointerException();
-    
-                Item temp;
-                int last;
-                int n = vec.length;
-            
-                createHeap(vec);
-                for (last = n-1; last > 0; last--) {
-                        // exchange top component with 
-                        // current last component of vec
-                        temp = vec[0]; 
-                        vec[0] = vec[last]; 
-                        vec[last] = temp;
-                        // call Heapify to to reestablish heap property
-                        heapify(vec, 0, last-1);
-                }//endfor
-        }
-
 
 }

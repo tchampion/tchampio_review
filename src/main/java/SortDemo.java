@@ -4,9 +4,11 @@ package main.java;
 // SortDemo.java     
 //                                              
 // Demonstrates various sorting algorithms on an array generated from a
+
 // text area by StringTokenizer 
 //
 // Assumptions: 
+
 // input is a sequence of n numbers a0, a1, a2 ... 
 // n is the length of an array
 // a0, a1, ... are the sorting keys of the array entries of type Item
