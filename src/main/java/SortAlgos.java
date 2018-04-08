@@ -4,8 +4,10 @@ package main.java;
  * A collection of various sorting algorithms for sorting an array
  * of items with int key
  */
+
  
 public final class SortAlgos {
+
 
         /**
          * Sorts with bubblesort algorithm
@@ -24,8 +26,10 @@ public final class SortAlgos {
 		        int n = vec.length-1;
 		        Item temp;
                 int bottom;       // bottom for each pass        
-                for (bottom = 1; bottom < n; bottom++)  {
-                        for (int i = n-1; i >= bottom; i--) {
+
+          for (bottom = 1; bottom <= n; bottom++)  {
+                        for (int i = n; i >= bottom; i--) {
+
                                 if (vec[i-1].key > vec[i].key) {
                                         temp = vec[i-1];
                                         vec[i-1] = vec[i];
